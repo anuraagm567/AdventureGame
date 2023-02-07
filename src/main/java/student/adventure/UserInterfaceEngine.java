@@ -1,7 +1,6 @@
 package student.adventure;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonParseException;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -13,7 +12,7 @@ import java.util.*;
 public class UserInterfaceEngine {
     private TimeTangledIslandGameEngine gameEngine;
 
-    public UserInterfaceEngine(String filePathForGame) throws FileNotFoundException, JsonParseException {
+    public UserInterfaceEngine(String filePathForGame) throws FileNotFoundException {
         try {
             Gson gson = new Gson();
             FileReader jsonFileReader = new FileReader(filePathForGame);
@@ -21,9 +20,10 @@ public class UserInterfaceEngine {
             gameEngine = new TimeTangledIslandGameEngine(gson.fromJson(jsonFileReader, GamePropertyCollection.class));
         } catch (FileNotFoundException invalidFileException) {
             throw new FileNotFoundException("File does not exist or could not be read.");
-        } catch (JsonParseException parsingException) {
-            throw new JsonParseException("JSON file does not fit required schema.");
         }
+        // } catch (JsonParseException parsingException) {
+        //     throw new JsonParseException("JSON file does not fit required schema.");
+        // }
     }
 
     /**

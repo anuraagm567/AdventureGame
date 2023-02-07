@@ -1,0 +1,190 @@
+{
+  "startingRoomName": "PendulumsLab",
+  "endingRoomName": "RestoredFuture",
+  "rooms": [
+    {
+      "name": "PendulumsLab",
+      "description": [
+        "You are in Pendulum's Lab, where you see a Time Machine and a disgruntled scientist.",
+        "You are able to travel east to go through the Time Machine.",
+        "To the south and west, you see rooms that don't exist, used purely for testing purposes.",
+        "Use the \"trade\" command to find out what the scientist needs."
+      ],
+      "visibleItems": [
+        {
+          "itemName": "battery",
+          "itemDescription": "This seems to be the power source for a large machine."
+        },
+        {
+          "itemName": "battery",
+          "itemDescription": "This seems to be the power source for a large machine."
+        },
+        {
+          "itemName": "chewing gum",
+          "itemDescription": "This seems to be a used piece of gum. Why did I pick this up again?"
+        }
+      ],
+      "nonPlayerCharacter": {
+        "characterName": "Scientist",
+        "itemRequestDialogue": [
+          "Could you help me find the power source for this machine.",
+          "Once you've found it, use the \"take [insert item name]\" command to pick it up.",
+          "Then, use the \"trade [insert item name]\" command to give it to me.",
+          "Once you pick up the item, you may also use the \"inspect [insert object name]\" command.",
+          "This will provide you with additional details about an item which may prove useful.",
+          "Finally, you may use the \"inventory\" command to see all the items in your current inventory."
+        ],
+        "requestCompletedDialogue": [
+          "Thank you so much. I've made a horrible mistake.",
+          "There was a malfunction with my machine, and I am worried that time as a whole has been messed up.",
+          "Could you use this machine, now that it's fixed, to travel to the future and see if everything's alright?",
+          "Here is an identification card that should allow you to access the Time Machine.",
+          "Use the \"go [insert direction name]\" command to travel east through the Time Machine."
+        ],
+        "missingItem": {
+          "itemName": "battery",
+          "itemDescription": "This seems to be the power source for a large machine."
+        },
+        "rewardItem": {
+          "itemName": "icard",
+          "itemDescription": "This seems to be an identification card from Pendulum's Lab."
+        }
+      },
+      "directions": [
+        {
+          "directionName": "East",
+          "room": "DestroyedFuture",
+          "itemsNeededToProgress": [
+            {
+              "itemName": "icard",
+              "itemDescription": "This seems to be an identification card from Pendulum's Lab."
+            }
+          ]
+        },
+        {
+          "directionName": "South",
+          "room": "DoesNotExist"
+        },
+        {
+          "directionName": "West",
+          "room": null
+        }
+      ]
+    },
+    {
+      "name": "DestroyedFuture",
+      "description": [
+        "You find yourself in a barren wasteland, with no signs of life except for someone who looks oddly familiar.",
+        "To the west, you see the Time Machine you entered through.",
+        "To the north, you see a portal leading to a beautiful utopia.",
+        "To the east, you see a portal leading to the Viking Era."
+      ],
+      "visibleItems": [
+        {
+          "itemName": "glasses",
+          "itemDescription": "This pair of barely usable glasses seems to belong to someone VERY old."
+        },
+        {
+          "itemName": "protective amulet",
+          "itemDescription": "This gold-encrusted amulet seems very old. How did it end up here?"
+        }
+      ],
+      "nonPlayerCharacter": {
+        "characterName": "Future Self",
+        "itemRequestDialogue": [
+          "I have something very important to tell you, but could you hand me my glasses first.",
+          "They should be somewhere around here."
+        ],
+        "requestCompletedDialogue": [
+          "Thank you. As I was saying, I have something important to tell you.",
+          "I am you but from fifty years in the future.",
+          "What you are seeing now is the reality we will live in if the past is not repaired.",
+          "A malfunction from the time machine caused various objects throughout history to be misplaced.",
+          "As a result, our world is in chaos. You must navigate the past and return objects to their rightful place.",
+          "Here is a time travelling stopwatch which should allow you to travel through the portal to the east.",
+          "Once all the historical artifacts have been properly restored to their owners, return here.",
+          "Make sure to bring back proof that the misplaced objects have been restored.",
+          "You should then be able to travel through the portal to the north to reach our restored future."
+        ],
+        "missingItem": {
+          "itemName": "glasses",
+          "itemDescription": "This pair of barely usable glasses seems to belong to someone VERY old."
+        },
+        "rewardItem": {
+          "itemName": "stopwatch",
+          "itemDescription": "This mysterious stopwatch can be used to travel through portals to the past and future."
+        }
+      },
+      "directions": [
+        {
+          "directionName": "West",
+          "room": "PendulumsLab",
+          "itemsNeededToProgress": [
+            {
+              "itemName": "icard",
+              "itemDescription": "This seems to be an identification card from Pendulum's Lab."
+            }
+          ]
+        },
+        {
+          "directionName": "North",
+          "room": "RestoredFuture",
+          "itemsNeededToProgress": [
+            {
+              "itemName": "mug of mead",
+              "itemDescription": "This drink has a distinct aroma of honey and fruit."
+            }
+          ]
+        },
+        {
+          "directionName": "East",
+          "room": "VikingEra",
+          "itemsNeededToProgress": null
+        }
+      ]
+    },
+    {
+      "name": "VikingEra",
+      "description": [
+        "You reach a rocky shore in the midst of a powerful storm.",
+        "You see someone who seems to be a Viking frantically searching through his ship's inventory.",
+        "To the west, you see the portal you traveled through."
+      ],
+      "visibleItems": [],
+      "nonPlayerCharacter": {
+        "characterName": "Viking Sailor",
+        "itemRequestDialogue": [
+          "Have you seen my lucky pendant by chance.",
+          "I can't find it, and I certainly don't plan to travel in this weather without it!",
+          "I'll have a nice reward in store for you if you can help me in my search."
+        ],
+        "requestCompletedDialogue": [
+          "Ah, there it is! Here is your reward as promised.",
+          "Here's a mug of mead, it'll last you a long while out here. Make sure not to lose it!"
+        ],
+        "missingItem": {
+          "itemName": "protective amulet",
+          "itemDescription": "This gold-encrusted amulet seems very old. How did it end up here?"
+        },
+        "rewardItem": {
+          "itemName": "mug of mead",
+          "itemDescription": "This drink has a distinct aroma of honey and fruit."
+        }
+      },
+      "directions": [
+        {
+          "directionName": "West",
+          "room": "DestroyedFuture",
+          "itemsNeededToProgress": []
+        }
+      ]
+    },
+    {
+      "name": "RestoredFuture",
+      "description": [
+        "Congratulations! You have successfully restored the missing historical relics to their owners.",
+        "The future is now repaired!"
+      ]
+    }
+  ]
+}
